@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/signup.css')}}">
+  </head>
+  <body>
+    <div class="container">
+      <h2>Sign Up</h2>
+      <form method="POST" action="">
+        {{ form.hidden_tag() }}
+        <div>
+          {{ form.username.label }}<br>
+          {{ form.username(size=32) }}<br>
+          {% for error in form.username.errors %}
+            <span>{{ error }}</span>
+          {% endfor %}
+        </div>
+        <div>
+          {{ form.email.label }}<br>
+          {{ form.email(size=32) }}<br>
+          {% for error in form.email.errors %}
+            <span>{{ error }}</span>
+          {% endfor %}
+        </div>
+        <div>
+          {{ form.age.label }}<br>
+          {{ form.age }}<br>
+          {% for error in form.age.errors %}
+            <span>{{ error }}</span>
+          {% endfor %}
+        </div>
+        <div>
+          {{ form.address.label }}<br>
+          {{ form.address }}<br>
+          {% for error in form.address.errors %}
+            <span>{{ error }}</span>
+          {% endfor %}
+        </div>
+        <div>
+          {{ form.password.label }}<br>
+          {{ form.password(size=32) }}<br>
+          {% for error in form.password.errors %}
+            <span>{{ error }}</span>
+          {% endfor %}
+        </div>
+        <div>
+          {{ form.confirm_password.label }}<br>
+          {{ form.confirm_password(size=32) }}<br>
+          {% for error in form.confirm_password.errors %}
+            <span>{{ error }}</span>
+          {% endfor %}
+        </div>
+        <div>
+          {{ form.submit() }}
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
